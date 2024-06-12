@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <title>Online Audio Noise Reducer - Remove Noise from Audio</title>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <img src="{{ url_for('static', filename='images/icon.png') }}" alt="" class="logo">
+        <h3 class="title">Noise Reducer</h3>
+    </header>
+
+    <!-- Main -->
+    <main>
+
+        <div id="recording-container">
+            <h1 class="h1-dynamic">Noise Reduction for <span id="profession"></span></h1>
+            <p class="centered">Automatically remove background noise from the audio file,
+                and enhance the audio quality of your recordings with our background noise removal online tool.</p>
+            <div id="buttonContainer">
+                <button id="startRecording">Start Recording</button>
+                <button id="stopRecording">Stop Recording</button>
+            </div>
+        </div>
+        <div id="sound-loading" class="loader-container">
+            <div class="loader">
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+            </div>
+        </div>
+
+        <!-- <div class="music">
+            <div class="wrapper">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div> -->
+            
+        <div id="content">
+            <h1 id="upload-title" class="h1-dynamic">Get Rid of Background Noise with a Single Click</h1>
+            <div id="drop-area">
+                <ion-icon name="cloud-upload" id="upload-icon" class="centered"></ion-icon>
+                <p>Drag & Drop an audio file here or click to select one</p>
+                <input type="file" id="fileInput" name="audio" accept=".wav">
+                <button id="customButton">Choose File</button>
+            </div>
+            <!-- Result -->
+            <button id="backButton" style="display: none;">Back</button>
+            <h1 id="filtered-audio-title" class="h1-dynamic" style="display: none;">Noise Reduction has been completed!</h1>
+            <div id="audio-container" style="display: none;">
+                <div class="audio-player" id="test12">
+                    <h4 class="h4-dynamicc">Original sound</h4>
+                    <div id="waveform1" class="waveform" style="background-color: #5e37ea;">
+                        <canvas id="canvas1"></canvas>
+                    </div>
+                    <audio id="audioPlayer1" controls class="centered" style="display: none; margin-top: 10px;"></audio>
+                </div>
+            
+                <div class="audio-player">
+                    <h4 class="h4-dynamicc">Result preview</h4>
+                    <div id="waveform2" class="waveform" style="background-color: rgb(6, 176, 6);">
+                        <canvas id="canvas2"></canvas>
+                    </div>
+                    <audio id="audioPlayer2" controls class="centered" style="display: none; margin-top: 10px;"></audio>
+                </div>
+            </div>
+            
+            <h2 id="filtered-audio-title2" class="h2-dynamic" style="display: none;">Visualization of Audio Data</h2>
+            <div id="result"></div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="waves">
+          <div class="wave" id="wave1"></div>
+          <div class="wave" id="wave2"></div>
+          <div class="wave" id="wave3"></div>
+          <div class="wave" id="wave4"></div>
+        </div>
+        <ul class="social-icon">
+          <li class="social-icon__item"><a class="social-icon__link" href="#">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a></li>
+          <li class="social-icon__item"><a class="social-icon__link" href="#">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a></li>
+          <li class="social-icon__item"><a class="social-icon__link" href="#">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a></li>
+          <li class="social-icon__item"><a class="social-icon__link" href="#">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a></li>
+        </ul>
+        <p>&copy; 2024 Audio Noise Reducer | All Rights Reserved</p>
+    </footer>
+    <!-- Scripts -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
